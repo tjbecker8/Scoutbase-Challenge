@@ -4,18 +4,18 @@ import {graphql} from 'react-apollo';
 
 
 
-const getCountriesQuery = gql`
-  {
-    countries {
-      code
-      name
-      languages{
-        name
-        native
-      }
-    }
-  }
-  `
+// const getCountriesQuery = gql`
+//   {
+//     countries {
+//       code
+//       name
+//       languages{
+//         name
+//         native
+//       }
+//     }
+//   }
+//   `
 
   const getContinentQuery = gql`
   {
@@ -38,14 +38,37 @@ class CountriesList extends Component {
 	//data
 
 	//functions
-  displayCountries () {
+  // displayCountries () {
+  //   var data = this.props.data
+  //   if (data.loading) {
+  //     return (<div>loading</div>)
+  //   } else {
+  //     return data.countries.map(country => {
+  //       return (
+  //         <li key={country.code}>{country.name}</li>
+  //       )
+  //     })
+  //   }
+  // }
+
+  displayCountinents () {
     var data = this.props.data
     if (data.loading) {
       return (<div>loading</div>)
     } else {
-      return data.countries.map(country => {
+      return data.continents.map(c => {
         return (
-          <li key={country.code}>{country.name}</li>
+          <div>
+        <li> {c.name} </li>
+            <ul>
+              {c.countries.map(co => {
+                return (
+                  <li>{co.name}</li>
+                )
+              })}
+
+            </ul>
+            </div>
         )
       })
     }
@@ -54,11 +77,14 @@ class CountriesList extends Component {
 
 	//render
 	render() {
-    console.log(this.props);
+    console.log(this.props.data.continents);
     //two objects showing, query is still going on in the background,
 		return (
       <ul>
-      {this.displayCountries()}
+      {this.displayCountinents()}
+        <ul>
+        <li>country</li>
+        </ul>
       </ul>
     )
 	}
@@ -67,4 +93,4 @@ class CountriesList extends Component {
 
 
 
-export default graphql(getCountriesQuery)(CountriesList);
+export default graphql(getContinentQuery)(CountriesList);
