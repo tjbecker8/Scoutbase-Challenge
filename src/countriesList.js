@@ -63,7 +63,18 @@ class CountriesList extends Component {
             <ul>
               {c.countries.map(co => {
                 return (
+                  <div>
                   <li>{co.name}</li>
+                    <ul>
+                      {co.languages.map(l => {
+                        return (
+                          <li>{l}</li>
+                        )
+                      })}
+                    </ul>
+                    </div>
+
+
                 )
               })}
 
