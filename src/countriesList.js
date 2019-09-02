@@ -7,6 +7,7 @@ import {graphql} from 'react-apollo';
 const getCountriesQuery = gql`
   {
     countries {
+      code
       name
       languages{
         name
@@ -19,14 +20,28 @@ class CountriesList extends Component {
 	//data
 
 	//functions
+  displayCountries () {
+    var data = this.props.data
+    if (data.loading) {
+      return (<div>loading</div>)
+    } else {
+      return data.countries.map(country => {
+        return (
+          <li key={country.code}>{country.name}</li>
+        )
+      })
+    }
+  }
 
 
 	//render
 	render() {
     console.log(this.props);
-    //two objects showing, query is still going on in the background, 
+    //two objects showing, query is still going on in the background,
 		return (
-      <h1>Countries List</h1>
+      <ul>
+      {this.displayCountries()}
+      </ul>
     )
 	}
 }
