@@ -16,6 +16,24 @@ const getCountriesQuery = gql`
     }
   }
   `
+
+  const getContinentQuery = gql`
+  {
+  continents {
+    name
+    countries{
+      name
+      languages{
+        name
+        native
+      }
+      code
+      currency
+    }
+  }
+}
+  `
+
 class CountriesList extends Component {
 	//data
 
