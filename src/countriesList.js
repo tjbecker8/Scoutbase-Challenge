@@ -37,7 +37,12 @@ import {graphql} from 'react-apollo';
 class CountriesList extends Component {
 	//data
 
+
 	//functions
+
+
+
+
   // displayCountries () {
   //   var data = this.props.data
   //   if (data.loading) {
@@ -58,45 +63,40 @@ class CountriesList extends Component {
     } else {
       return data.continents.map(c => {
         return (
-          <div>
-        <li> {c.name} </li>
-            <ul>
-              {c.countries.map(co => {
-                return (
-                  <div>
-                  <li>{co.name}</li>
-                    <ul>
-                      {co.languages.map(l => {
-                        return (
-                          <li>{l}</li>
-                        )
-                      })}
-                    </ul>
-                    </div>
+          <li>{c.name}</li>
+        )
+      })
+    }
+  }
 
-
-                )
-              })}
-
-            </ul>
-            </div>
+  displayCountries () {
+    var data = this.props.data
+    if (data.loading) {
+      return (<div>loading</div>)
+    } else {
+      return data.continents[0].countries.map(c => {
+        return (
+          <li>{c.name}</li>
         )
       })
     }
   }
 
 
+
 	//render
 	render() {
-    console.log(this.props.data.continents);
+    console.log('props', this.props.data);
     //two objects showing, query is still going on in the background,
 		return (
+      <div>
       <ul>
       {this.displayCountinents()}
-        <ul>
-        <li>country</li>
-        </ul>
       </ul>
+      <ul>
+        {this.displayCountries()}
+      </ul>
+      </div>
     )
 	}
 }
