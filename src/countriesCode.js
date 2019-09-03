@@ -18,8 +18,8 @@ import {graphql} from 'react-apollo';
 //   `
 
   const getCountryQuery = gql`
-  {
-   country(code: "US"){
+  query($code: String){
+   country(code: $code){
     name
     currency
     phone
@@ -29,7 +29,9 @@ import {graphql} from 'react-apollo';
 
 class CountriesCode extends Component {
 	//data
-
+state = {
+  code: null,
+}
 
 	//functions
 
@@ -55,7 +57,7 @@ class CountriesCode extends Component {
 
 	//render
 	render() {
-    console.log('props', this.props);
+    console.log('props',this.props.code);
     //two objects showing, query is still going on in the background,
 		return (
       <div>

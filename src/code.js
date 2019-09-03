@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from 'react-apollo';
 import CountriesCode from  './countriesCode';
@@ -11,15 +11,19 @@ const client = new ApolloClient({
   uri: 'https://countries.trevorblades.com'
 });
 
-function Code() {
+class Code extends Component {
+
+
+render() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
         <h1>Code</h1>
-        <CountriesCode  />
+        <CountriesCode code={this.props.match.params.code} />
         </div>
     </ApolloProvider>
   )
+}
 }
 
 export default Code;
