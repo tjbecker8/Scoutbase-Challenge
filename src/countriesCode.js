@@ -36,7 +36,7 @@ class CountriesCode extends Component {
 
 
 
-  displayCountrie () {
+  displayCountry () {
     var data = this.props.data
     if (data.loading) {
       return (<div>loading</div>)
@@ -55,7 +55,7 @@ class CountriesCode extends Component {
 
 	//render
 	render() {
-    console.log('props', this.props.data);
+    console.log('props', this.props);
     //two objects showing, query is still going on in the background,
 		return (
       <div>

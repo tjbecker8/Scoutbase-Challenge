@@ -15,8 +15,8 @@ function Code() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
-        <h1>Hello World</h1>
-        <CountriesCode />
+        <h1>Code</h1>
+        <CountriesCode  />
         </div>
     </ApolloProvider>
   )

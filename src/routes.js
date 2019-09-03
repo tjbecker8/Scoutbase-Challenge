@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import App from './App'
 import Countries from './countries'
-import Code from './Code'
+import Code from './code'
 
 
 
@@ -16,9 +16,8 @@ class Routes extends Component {
         <BrowserRouter>
 				<Switch>
 
-
+          <Route path="/countries/:code" component={Code} />
           <Route path="/countries" component={Countries} />
-          <Route path="/countries/(code:)" component={Code} />
           <Route path="/" component={App} />
 
 
