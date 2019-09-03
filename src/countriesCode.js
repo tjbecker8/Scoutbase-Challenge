@@ -43,8 +43,10 @@ class CountriesList extends Component {
       return (<div>loading</div>)
     } else {
       return data.countries.map(c => {
-        if (c.code = this.props.code) {
-          return (<div>hello</div>)
+        if (c.code === this.props.code) {
+          return (<div>Country found</div>)
+        } else {
+          return (<div>country not found</div>)
         }
       })
     }
