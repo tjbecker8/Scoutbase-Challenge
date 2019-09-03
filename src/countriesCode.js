@@ -17,7 +17,7 @@ import {graphql} from 'react-apollo';
 //   }
 //   `
 
-  const getContinentQuery = gql`
+  const getCountryQuery = gql`
   {
    country(code: "US"){
     name
@@ -27,7 +27,7 @@ import {graphql} from 'react-apollo';
   }
   `
 
-class CountriesList extends Component {
+class CountriesCode extends Component {
 	//data
 
 
@@ -68,4 +68,4 @@ class CountriesList extends Component {
 
 
 
-export default graphql(getContinentQuery)(CountriesList);
+export default graphql(getCountryQuery)(CountriesCode);
