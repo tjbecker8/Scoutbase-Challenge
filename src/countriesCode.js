@@ -19,10 +19,12 @@ import {graphql} from 'react-apollo';
 
   const getContinentQuery = gql`
   {
- country(code: "US"){
-  name
-}
-}
+   country(code: "US"){
+    name
+    currency
+    phone
+  }
+  }
   `
 
 class CountriesList extends Component {
