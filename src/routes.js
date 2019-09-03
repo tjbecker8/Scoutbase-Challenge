@@ -16,9 +16,10 @@ class Routes extends Component {
         <BrowserRouter>
 				<Switch>
 
-          <Route path="/" component={App} />
+          
           <Route path="/countries" component={CountriesList} />
           <Route path="/countries/(code:)" component={CountriesCode} />
+          <Route path="/" component={App} />
 
 
 
@@ -26,9 +27,6 @@ class Routes extends Component {
 			</BrowserRouter>
       )
     }
-
-
-
 }
 
 export default Routes;

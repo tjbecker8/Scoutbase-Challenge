@@ -90,6 +90,7 @@ class CountriesList extends Component {
     //two objects showing, query is still going on in the background,
 		return (
       <div>
+        <h1>Countries of the world</h1>
       <ul>
       {this.displayCountinents()}
       </ul>
