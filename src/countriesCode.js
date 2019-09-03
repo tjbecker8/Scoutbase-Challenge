@@ -57,7 +57,7 @@ state = {
 
 	//render
 	render() {
-    console.log('props',this.props.code);
+    console.log('props',this.props);
     //two objects showing, query is still going on in the background,
 		return (
       <div>
@@ -70,4 +70,12 @@ state = {
 
 
 
-export default graphql(getCountryQuery)(CountriesCode);
+export default graphql(getCountryQuery, {
+  options: (props) => {
+    return {
+      variables: {
+        code: props.code.toUpperCase()
+      }
+    }
+  }
+})(CountriesCode);
