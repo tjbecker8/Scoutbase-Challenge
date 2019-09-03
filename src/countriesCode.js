@@ -61,6 +61,7 @@ state = {
     //two objects showing, query is still going on in the background,
 		return (
       <div>
+        
 
       </div>
     )
