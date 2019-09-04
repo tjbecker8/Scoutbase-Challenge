@@ -63,24 +63,34 @@ class CountriesList extends Component {
     } else {
       return data.continents.map(c => {
         return (
-          <li>{c.name}</li>
+          <div style={{float: 'left', width: 15, margin: 60 }}>
+            <ul>
+              <li className="continent">{c.name}</li>
+              {c.countries.map(co => {
+                return (
+                  <li className="country">{co.name}</li>
+                )
+              })}
+            </ul>
+          </div>
+
         )
       })
     }
   }
 
-  displayCountries () {
-    var data = this.props.data
-    if (data.loading) {
-      return (<div>loading</div>)
-    } else {
-      return data.continents[0].countries.map(c => {
-        return (
-          <li>{c.name}</li>
-        )
-      })
-    }
-  }
+  // displayCountries () {
+  //   var data = this.props.data
+  //   if (data.loading) {
+  //     return (<div>loading</div>)
+  //   } else {
+  //     return data.continents[0].countries.map(c => {
+  //       return (
+  //         <li>{c.name}</li>
+  //       )
+  //     })
+  //   }
+  // }
 
 
 
@@ -91,12 +101,10 @@ class CountriesList extends Component {
 		return (
       <div>
         <h1>Countries of the world</h1>
-      <ul>
+
       {this.displayCountinents()}
-      </ul>
-      <ul>
-        {this.displayCountries()}
-      </ul>
+
+
       </div>
     )
 	}

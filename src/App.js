@@ -15,7 +15,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
-        <h1>Hello World</h1>
+      
         <CountrySearch />
         </div>
     </ApolloProvider>
