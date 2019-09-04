@@ -2,6 +2,7 @@ import React from 'react';
 import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from 'react-apollo';
 import './App.css';
+import CountrySearch from './countrySearch'
 
 
 //apollo client setup
@@ -15,10 +16,7 @@ function App() {
     <ApolloProvider client={client}>
       <div className="App">
         <h1>Hello World</h1>
-        <div>
-          Country Code <input type="text" name="code"/><br/>
-        <button id="code-button" type="submit" >Send</button>
-        </div>
+        <CountrySearch />
         </div>
     </ApolloProvider>
   )
