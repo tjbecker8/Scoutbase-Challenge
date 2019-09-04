@@ -3,22 +3,37 @@ import {gql} from 'apollo-boost';
 import {graphql} from 'react-apollo';
 import styled from 'styled-components';
 
-
+//styling
 const DivCountries = styled.div`
   float: left;
-  width: 15px;
-  margin: 60px;
+  width: 13%;
+  margin: 5px;
   text-align: center;
-  border: 3px solid black;
+  border: 1px solid black;
+  background: #f5f5f5;
 
 `
 
 const PContinent =styled.p`
   font-size: 25px;
   font-weight: bold;
-  list-style-type: none;
+
 `
 
+const PCountry = styled.p`
+
+  list-style-type: none;
+  font-size: 15px;
+  font-weight: bold;
+`
+
+const LiLanguages = styled.li`
+list-style-type: none;
+font-size: 10px;
+
+`
+
+//query
   const getContinentQuery = gql`
   {
   continents {
@@ -43,21 +58,6 @@ class CountriesList extends Component {
 	//functions
 
 
-
-
-  // displayCountries () {
-  //   var data = this.props.data
-  //   if (data.loading) {
-  //     return (<div>loading</div>)
-  //   } else {
-  //     return data.countries.map(country => {
-  //       return (
-  //         <li key={country.code}>{country.name}</li>
-  //       )
-  //     })
-  //   }
-  // }
-
   displayCountinents () {
     var data = this.props.data
     if (data.loading) {
@@ -68,16 +68,17 @@ class CountriesList extends Component {
           <DivCountries >
 
               <PContinent >{c.name}</PContinent >
-                <ul>
+
               {c.countries.map(co => {
                 return (
                   <div>
-                  <li className="country">{co.name}</li>
+                  <PCountry >{co.name}</PCountry >
                     {co.languages.map(l => {
                       return (
                         <div>
-                        <li>{l.name}</li>
-                        <li>{l.native}</li>
+                        <LiLanguages >Name: {l.name}</LiLanguages >
+
+                        <LiLanguages >Native: {l.native}</LiLanguages >
                         </div>
                       )
                     })
@@ -86,25 +87,14 @@ class CountriesList extends Component {
                 )
               })
             }
-            </ul>
+
           </DivCountries >
         )
       })
     }
   }
 
-  // displayCountries () {
-  //   var data = this.props.data
-  //   if (data.loading) {
-  //     return (<div>loading</div>)
-  //   } else {
-  //     return data.continents[0].countries.map(c => {
-  //       return (
-  //         <li>{c.name}</li>
-  //       )
-  //     })
-  //   }
-  // }
+
 
 
 
@@ -114,7 +104,7 @@ class CountriesList extends Component {
     //two objects showing, query is still going on in the background,
 		return (
       <div>
-        <h1>Countries of the world</h1>
+        <h1>Languages Spoken by The Countries of The world</h1>
 
       {this.displayCountinents()}
 
