@@ -16,15 +16,7 @@ const Wrapper = styled.section`
   margin-right: auto;
 `
 
-const Button =styled.button`
-  font-size: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid black;
-  border-radius: 5px;
-  margin-top: 15px;
-  margin-left: auto;
-  margin-right: auto;
-`
+
 
 //apollo client setup
 const client = new ApolloClient({
