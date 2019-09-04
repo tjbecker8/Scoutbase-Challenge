@@ -11,7 +11,7 @@ const Wrapper = styled.section`
   border-radius; 3px;
   text-align: center;
   margin-top: 40px;
-  width: 15%;
+  width: 20%;
   margin-left: auto;
   margin-right: auto;
 `

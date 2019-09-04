@@ -23,11 +23,7 @@ state ={
 	}
 
 
-submit =(e) => {
-	e.preventDefault()
-	console.log('<><><>', this.state);
 
-}
 
 
 
@@ -39,7 +35,7 @@ submit =(e) => {
 
 		return (
       <div>
-				<form onSubmit={(e)=> this.submit(e)} >
+				<form >
         Country Code <input type="text" name="code" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
 				<span id="see-analysis" >
 							<Link to ={{

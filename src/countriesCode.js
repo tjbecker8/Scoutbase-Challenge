@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {gql} from 'apollo-boost';
 import {graphql} from 'react-apollo';
-
+import {Link} from 'react-router-dom'
 
 
 // const getCountriesQuery = gql`
@@ -30,10 +30,16 @@ import {graphql} from 'react-apollo';
 class CountriesCode extends Component {
 	//data
 state = {
-  code: null,
+  code: '',
 }
 
 	//functions
+
+  changeCode = (e) => {
+		this.setState({code: e.target.value})
+		console.log('state', this.state);
+	}
+
 
 
 
@@ -44,11 +50,24 @@ state = {
       return (<div>loading</div>)
     } else {
       return (
+      <div>
         <div>
-        <h2>{data.country.name}</h2>
-        <h3>Currency: {data.country.currency}</h3>
-        <h3>Area Code (Phone): {data.country.phone}</h3>
+          <h2>{data.country.name}</h2>
+          <h3>Currency: {data.country.currency}</h3>
+          <h3>Area Code (Phone): {data.country.phone}</h3>
+          <span>Search Another Country?</span>
         </div>
+        <div>
+          <form >
+          Country Code <input type="text" name="code" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
+  				<span id="see-analysis" >
+  							<Link to ={{
+  									pathname: `/countries/${this.state.code}`,
+  								}} >Submit</Link>
+  								</span>
+  				</form>
+        </div>
+      </div>
     )
     }
   }
