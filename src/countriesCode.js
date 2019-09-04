@@ -43,26 +43,31 @@ state = {
     if (data.loading) {
       return (<div>loading</div>)
     } else {
-      return data.countries.map(c => {
-        if (c.code === this.props.code) {
-          return (<div>Country found</div>)
-        } else {
-          return (<div>country not found</div>)
-        }
-      })
+      return (
+        <div>
+        <h2>{data.country.name}</h2>
+        <h3>Currency: {data.country.currency}</h3>
+        <h3>Area Code (Phone): {data.country.phone}</h3>
+        </div>
+    )
     }
   }
 
 
 
+
 	//render
 	render() {
-    console.log('props',this.props);
+    console.log('props',this.props.data);
     //two objects showing, query is still going on in the background,
 		return (
       <div>
-        
 
+
+        <img src={`https://www.countryflags.io/${this.props.code}/flat/64.png`} alt="Country Flag" />
+
+
+        {this.displayCountry()}
       </div>
     )
 	}

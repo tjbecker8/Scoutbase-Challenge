@@ -18,7 +18,7 @@ render() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
-        <h1>Code</h1>
+        
         <CountriesCode code={this.props.match.params.code} />
         </div>
     </ApolloProvider>
