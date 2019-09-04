@@ -51,14 +51,10 @@ state ={
 
 		return (
       <DivSearch>
-				<p>See Currency and Area Code (phone) by Searching Country 2 Digit Code</p>
-				<form >
+				<p>See Currency and Area Code (phone) by Searching Country Alpha-2 Code</p>
+				<form action={`/countries/${this.state.code}`} >
         	Country Code <input type="text" name="code" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
-					<SpanSubmit >
-						<Link to ={{
-								pathname: `/countries/${this.state.code}`,
-								}} >Submit</Link>
-					</SpanSubmit >
+					<button type="submit" value="Submit">Submit</button>
 				</form>
       </DivSearch>
     )

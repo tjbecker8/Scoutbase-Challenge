@@ -58,13 +58,9 @@ state = {
           <span>Search Another Country?</span>
         </div>
         <div>
-          <form >
-          Country Code <input type="text" name="code" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
-  				<span >
-  							<Link to ={{
-  									pathname: `/countries/${this.state.code}`,
-  								}} >Submit</Link>
-  								</span>
+          <form action={`/countries/${this.state.code}`} >
+          	Country Code <input type="text" name="code" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
+  					<button type="submit" value="Submit">Submit</button>
   				</form>
         </div>
       </div>
