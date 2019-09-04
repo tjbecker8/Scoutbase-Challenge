@@ -1,6 +1,16 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
+import styled from 'styled-components';
+import './Style.css'
 
+const SpanCountries = styled.span`
+	background: rgba(134, 226, 213, .5);
+	padding: 10px;
+	border-radius: 5px;
+	position: fixed;
+	top: 40%;
+	left: 7%;
+`
 
 
 
@@ -10,23 +20,9 @@ import {Link} from 'react-router-dom'
 
 class CountriesAll extends Component {
 	//data
-state ={
-	code: '',
-}
+
 
 	//functions
-
-
-	changeCode = (e) => {
-		this.setState({code: e.target.value})
-		console.log('state', this.state);
-	}
-
-
-
-
-
-
 
 
 
@@ -36,11 +32,11 @@ state ={
 		return (
       <div>
 
-				<span >
-							<Link to ={{
-									pathname: `/countries`,
-								}} >See All Countries and The Languages spoken in Each Country</Link>
-								</span>
+				<SpanCountries >
+					<Link className="countries" to ={{
+							pathname: `/countries`,
+							}} >See All Countries and The Languages spoken in Each Country</Link>
+				</SpanCountries >
 
       </div>
     )
