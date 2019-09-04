@@ -1,21 +1,23 @@
 import React, {Component} from 'react';
 import {gql} from 'apollo-boost';
 import {graphql} from 'react-apollo';
+import styled from 'styled-components';
 
 
+const DivCountries = styled.div`
+  float: left;
+  width: 15px;
+  margin: 60px;
+  text-align: center;
+  border: 3px solid black;
 
-// const getCountriesQuery = gql`
-//   {
-//     countries {
-//       code
-//       name
-//       languages{
-//         name
-//         native
-//       }
-//     }
-//   }
-//   `
+`
+
+const PContinent =styled.p`
+  font-size: 25px;
+  font-weight: bold;
+  list-style-type: none;
+`
 
   const getContinentQuery = gql`
   {
@@ -63,17 +65,29 @@ class CountriesList extends Component {
     } else {
       return data.continents.map(c => {
         return (
-          <div style={{float: 'left', width: 15, margin: 60 }}>
-            <ul>
-              <li className="continent">{c.name}</li>
+          <DivCountries >
+
+              <PContinent >{c.name}</PContinent >
+                <ul>
               {c.countries.map(co => {
                 return (
+                  <div>
                   <li className="country">{co.name}</li>
+                    {co.languages.map(l => {
+                      return (
+                        <div>
+                        <li>{l.name}</li>
+                        <li>{l.native}</li>
+                        </div>
+                      )
+                    })
+                  }
+                  </div>
                 )
-              })}
+              })
+            }
             </ul>
-          </div>
-
+          </DivCountries >
         )
       })
     }

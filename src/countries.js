@@ -15,6 +15,7 @@ const Wrapper = styled.section`
   width: 75%;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 `
 
 
