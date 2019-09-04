@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom'
 
 
 
-class CountrySearch extends Component {
+class CountriesAll extends Component {
 	//data
 state ={
 	code: '',
@@ -35,14 +35,13 @@ state ={
 
 		return (
       <div>
-				<form >
-        Country Code <input type="text" name="code" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
+
 				<span >
 							<Link to ={{
-									pathname: `/countries/${this.state.code}`,
-								}} >Submit</Link>
+									pathname: `/countries`,
+								}} >See All Countries and The Languages spoken in Each Country</Link>
 								</span>
-				</form>
+
       </div>
     )
 	}
@@ -51,4 +50,4 @@ state ={
 
 
 
-export default CountrySearch;
+export default CountriesAll;

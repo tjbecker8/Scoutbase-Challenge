@@ -60,7 +60,7 @@ state = {
         <div>
           <form >
           Country Code <input type="text" name="code" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
-  				<span id="see-analysis" >
+  				<span >
   							<Link to ={{
   									pathname: `/countries/${this.state.code}`,
   								}} >Submit</Link>
