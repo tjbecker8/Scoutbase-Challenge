@@ -1,15 +1,10 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom'
+
 import './Style.css'
 import styled from 'styled-components';
 
 
-const SpanSubmit = styled.span`
-	background: grey;
-	padding: 5px;
-	border-radius: 5px;
-	margin: 3px;
-`
+
 
 const DivSearch = styled.div`
 	background: rgba(134, 226, 213, .5);

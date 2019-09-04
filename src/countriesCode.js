@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {gql} from 'apollo-boost';
 import {graphql} from 'react-apollo';
-import {Link} from 'react-router-dom'
+
 
 
 // const getCountriesQuery = gql`
