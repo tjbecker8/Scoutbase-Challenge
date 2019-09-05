@@ -16,6 +16,27 @@ const DivSearch = styled.div`
 	right: 7%;
 `
 
+const SubmitButton = styled.button`
+	width: 100px;
+	height: 40px;
+	border-radius: 10px;
+	font-size: 15px;
+	font-weight: bolder;
+`
+
+const Paragraph = styled.p`
+	font-size: 15px;
+	font-weight: bolder;
+`
+
+const InputCode = styled.input`
+	height: 20px;
+	width: 115px;
+	font-size: 18px;
+`
+
+
+
 
 
 
@@ -46,10 +67,10 @@ state ={
 
 		return (
       <DivSearch>
-				<p>See Currency and Area Code (phone) by Searching Country Alpha-2 Code</p>
+				<Paragraph>See Currency and Area Code (phone) by Searching Country Alpha-2 Code</Paragraph>
 				<form action={`/countries/${this.state.code}`} >
-        	Country Code <input type="text" name="code" maxlength="2" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
-					<button type="submit" value="Submit">Submit</button>
+        	<InputCode type="text" name="code" maxlength="2" placeholder="country code" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
+					<SubmitButton type="submit" value="Submit">Submit</SubmitButton>
 				</form>
       </DivSearch>
     )

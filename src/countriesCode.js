@@ -1,21 +1,16 @@
 import React, {Component} from 'react';
 import {gql} from 'apollo-boost';
 import {graphql} from 'react-apollo';
+import styled from 'styled-components';
 
 
-
-// const getCountriesQuery = gql`
-//   {
-//     countries {
-//       code
-//       name
-//       languages{
-//         name
-//         native
-//       }
-//     }
-//   }
-//   `
+const SubmitButton = styled.button`
+	width: 90px;
+	height: 30px;
+	border-radius: 10px;
+	font-size: 15px;
+	font-weight: bolder;
+ `
 
   const getCountryQuery = gql`
   query($code: String){
@@ -25,6 +20,12 @@ import {graphql} from 'react-apollo';
     phone
   }
   }
+  `
+
+  const InputCode = styled.input`
+  	height: 18px;
+  	width: 115px;
+  	font-size: 16px;
   `
 
 class CountriesCode extends Component {
@@ -59,8 +60,8 @@ state = {
         </div>
         <div>
           <form action={`/countries/${this.state.code}`} >
-          	Country Code <input type="text" name="code" maxlength="2" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
-  					<button type="submit" value="Submit">Submit</button>
+          	<InputCode type="text" name="code" placeholder="Country Code" maxlength="2" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
+  					<SubmitButton type="submit" value="Submit">Submit</SubmitButton>
   				</form>
         </div>
       </div>
