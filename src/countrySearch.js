@@ -69,7 +69,7 @@ state ={
       <DivSearch>
 				<Paragraph>See Currency and Area Code (phone) by Searching Country Alpha-2 Code</Paragraph>
 				<form action={`/countries/${this.state.code}`} >
-        	<InputCode type="text" name="code" maxlength="2" placeholder="country code" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
+        	<InputCode type="text" name="code" maxLength="2" placeholder="country code" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
 					<SubmitButton type="submit" value="Submit">Submit</SubmitButton>
 				</form>
       </DivSearch>

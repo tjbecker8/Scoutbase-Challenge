@@ -60,7 +60,7 @@ state = {
         </div>
         <div>
           <form action={`/countries/${this.state.code}`} >
-          	<InputCode type="text" name="code" placeholder="Country Code" maxlength="2" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
+          	<InputCode type="text" name="code" placeholder="Country Code" maxLength="2" value={this.state.code} onChange={(e) => this.changeCode(e)} /><br/>
   					<SubmitButton type="submit" value="Submit">Submit</SubmitButton>
   				</form>
         </div>
